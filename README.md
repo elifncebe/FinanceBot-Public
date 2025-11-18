@@ -1,78 +1,98 @@
-# FinanceBot-Public
-FinanceBot is a Discord bot built with Python, Discord.py, and Yahoo Finance (yfinance).
-It delivers real-time stock market data, allows users to track prices, manage watchlists, and fetch detailed stock info with simple, intuitive commands.
+# 📈 FinanceBot-Public
 
-FEATURES
+FinanceBot is a Discord bot built with **Python**, **Discord.py**, and **Yahoo Finance (yfinance)**.  
+It delivers **real-time stock market data**, lets users **track prices**, manage **watchlists**, and retrieve **detailed stock info** with simple commands.
 
-Real-time stock prices using Yahoo Finance 1-minute interval data.
+---
 
-Auto-updating watchlists that post price updates every minute.
+## 🚀 Features
 
-Detailed stock information (market cap, 52-week high/low, summaries, etc.).
+- 🔹 **Real-Time Stock Prices** using Yahoo Finance 1-minute data  
+- 🔹 **Auto-Updating Watchlists** (updates every minute per channel)  
+- 🔹 **Detailed Stock Info** including market cap, 52-week range, summaries, etc.  
+- 🔹 **Clean, simple command system** using `$` prefix  
+- 🔹 **Error handling & helpful feedback**
 
-Simple and clean command setup using the $ prefix.
+---
 
-TECH STACK
+## 📦 Tech Stack
 
-Python 3.10+
+- Python 3.10+
+- discord.py
+- yfinance
+- python-dotenv
+- pytz
 
-discord.py
+---
 
-yfinance
+## 🛠️ Installation & Setup
 
-dotenv
-
-pytz
-
-INSTALLATION & SETUP
-
-Clone the repository:
+### 1. Clone the repository
+```bash
 git clone https://github.com/YOUR_USERNAME/FinanceBot-Public.git
-
-Install dependencies:
+cd FinanceBot-Public
+2. Install dependencies
+bash
+Copy code
 pip install -r requirements.txt
+3. Add your Discord token
+Create a .env file in the project directory:
 
-Create a .env file in the project folder with the following line:
+ini
+Copy code
 DISCORD_TOKEN=your_bot_token_here
-
-Run the bot:
+4. Run the bot
+bash
+Copy code
 python bot.py
+💬 Commands
+Command	Description
+$price SYMBOL	Get the real-time or latest available price of a stock.
+$watch SYMBOL	Add a symbol to the channel’s watchlist for auto-updates.
+$unwatch SYMBOL	Remove a symbol from the watchlist.
+$watchlist	View all symbols currently being watched.
+$info SYMBOL	Get detailed stock information including summary, market cap, and 52-week range.
+$commands	Show the full list of commands.
 
-COMMANDS
-
-$price SYMBOL - Get the real-time or latest stock price.
-$watch SYMBOL - Add a stock to the channel watchlist.
-$unwatch SYMBOL - Remove a stock from the watchlist.
-$watchlist - Show the list of stocks being monitored.
-$info SYMBOL - Get detailed information about a stock.
-$commands - Display all available commands.
-
-EXAMPLE USAGE
-
+📘 Example Usage
+bash
+Copy code
 $price AAPL
 $watch TSLA
 $unwatch GOOGL
 $watchlist
 $info MSFT
+🔧 How It Works
+🔄 Real-Time Data Retrieval
+FinanceBot uses yfinance.Ticker.history(period='1d', interval='1m') to get real-time data.
+If real-time data is unavailable (market closed), it falls back to:
 
-HOW IT WORKS
+regularMarketPrice
 
-Real-Time Data:
-The bot uses yfinance to pull 1-minute interval data. If real-time data is unavailable,
-it falls back to regularMarketPrice or previousClose.
+previousClose
 
-Auto Price Updates:
-The bot automatically sends updated prices every 1 minute for all watched symbols
-in each channel.
+🕒 Automatic Watchlist Updates
+Every 1 minute, the bot posts updated prices for all watched stocks in each channel.
 
-Stock Info:
-$info returns embedded stock information including summary, market cap, and 52-week
-high/low values.
+📊 Rich Stock Info
+$info sends a Discord embed containing:
 
-FILE STRUCTURE
+Company full name
 
+Summary/business description
+
+Market cap
+
+Current/latest price
+
+52-week high & low
+
+📂 Project Structure
+bash
+Copy code
 FinanceBot-Public/
-bot.py
-requirements.txt
-.env (not included)
-readme.txt
+│
+├── bot.py
+├── requirements.txt
+├── .env              # Holds your bot token (make sure to put your Discord Bot token)
+└── README.md
