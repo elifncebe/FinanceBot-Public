@@ -75,13 +75,6 @@ previousClose
 🕒 Automatic Watchlist Updates
 Every 1 minute, the bot posts updated prices for all watched stocks in each channel.
 
-📊 Rich Stock Info
-$info sends a Discord embed containing:
-Company full name
-Summary/business description
-Market cap
-Current/latest price
-52-week high & low
 
 📂 Project Structure
 ```
