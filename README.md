@@ -7,11 +7,11 @@ It delivers **real-time stock market data**, lets users **track prices**, manage
 
 ## 🚀 Features
 
-- 🔹 **Real-Time Stock Prices** using Yahoo Finance 1-minute data  
-- 🔹 **Auto-Updating Watchlists** (updates every minute per channel)  
-- 🔹 **Detailed Stock Info** including market cap, 52-week range, summaries, etc.  
-- 🔹 **Clean, simple command system** using `$` prefix  
-- 🔹 **Error handling & helpful feedback**
+- **Real-Time Stock Prices** using Yahoo Finance 1-minute data  
+- **Auto-Updating Watchlists** (updates every minute per channel)  
+- **Detailed Stock Info** including market cap, 52-week range, summaries, etc.  
+- **Clean, simple command system** using `$` prefix  
+- **Error handling & helpful feedback**
 
 ---
 
