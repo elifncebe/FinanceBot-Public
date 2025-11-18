@@ -31,20 +31,20 @@ It delivers **real-time stock market data**, lets users **track prices**, manage
 ```bash
 git clone https://github.com/YOUR_USERNAME/FinanceBot-Public.git
 cd FinanceBot-Public
+```
 2. Install dependencies
-bash
-Copy code
+```
 pip install -r requirements.txt
-3. Add your Discord token
+```
+4. Add your Discord token
 Create a .env file in the project directory:
-
-ini
-Copy code
+```
 DISCORD_TOKEN=your_bot_token_here
+```
 4. Run the bot
-bash
-Copy code
+```
 python bot.py
+```
 💬 Commands
 Command	Description
 $price SYMBOL	Get the real-time or latest available price of a stock.
@@ -55,13 +55,14 @@ $info SYMBOL	Get detailed stock information including summary, market cap, and 5
 $commands	Show the full list of commands.
 
 📘 Example Usage
-bash
-Copy code
+```
 $price AAPL
 $watch TSLA
 $unwatch GOOGL
 $watchlist
 $info MSFT
+```
+
 🔧 How It Works
 🔄 Real-Time Data Retrieval
 FinanceBot uses yfinance.Ticker.history(period='1d', interval='1m') to get real-time data.
@@ -76,23 +77,19 @@ Every 1 minute, the bot posts updated prices for all watched stocks in each chan
 
 📊 Rich Stock Info
 $info sends a Discord embed containing:
-
 Company full name
-
 Summary/business description
-
 Market cap
-
 Current/latest price
-
 52-week high & low
 
 📂 Project Structure
-bash
-Copy code
+```
 FinanceBot-Public/
 │
 ├── bot.py
 ├── requirements.txt
 ├── .env              # Holds your bot token (make sure to put your Discord Bot token)
 └── README.md
+```
+
